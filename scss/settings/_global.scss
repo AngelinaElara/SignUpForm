@@ -1,0 +1,31 @@
+body {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 200;
+  background-color: #F4F5FC;
+  
+
+  @media(min-width: $breakpoint-md) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+.app {
+  display: flex;
+  flex-direction: column;
+
+  @media(min-width: $breakpoint-md) {
+    flex-direction: row;
+  }
+}
+
+select {
+  display: block;
+}

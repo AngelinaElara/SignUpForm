@@ -1,0 +1,538 @@
+.form {
+  position: relative;
+  background: #FFF;
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  @media(min-width: $breakpoint-md) {
+    display: block;
+    width: 527.8px;
+    height: 480px;
+    padding: 38.52px 22px 32.48px 20.8px;
+  }
+
+  @media(min-width: $breakpoint-lg) {
+    width: 700px;
+    height: 600px;
+  }
+
+  @media(min-width: $breakpoint-xl) {
+    width: 900px;
+    height: 800px;
+  }
+
+  &__title {
+    font-size: 22px;
+    font-weight: 500;
+    color: #111111;
+
+    @media(min-width: $breakpoint-md) {
+      width: 110px;
+      line-height: 26px;
+      letter-spacing: -0.46px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    @media(min-width: $breakpoint-xl) {
+      width: 210px;
+      font-size: 30px;
+    }
+  }
+
+  &__description {
+    font-size: 14px;
+    font-weight: 400;
+    word-spacing: -1.4px;
+    line-height: 16.41px;
+    color: #111111;
+
+    @media(min-width: $breakpoint-md) {
+      width: 290px;
+      height: 16px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    @media(min-width: $breakpoint-xl) {
+      margin-top: 15px;
+      width: 500px;
+      font-size: 20px;
+    }
+  }
+
+  &__inputs {
+    @media(min-width: $breakpoint-md) {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      gap: 13.1px;
+    }
+  }
+
+  &__selects {
+    position: absolute;
+    top: 25px;
+    display: flex;
+    justify-content: space-between;
+    height: 23px;
+    width: 100%;
+
+    @media(min-width: $breakpoint-xl) {
+      top: 35px;
+    }
+
+    #day {
+      width: 56px;
+
+      @media(min-width: $breakpoint-xl) {
+        width: 75px;
+      }
+    }
+
+    #month {
+      width: 91px;
+
+      @media(min-width: $breakpoint-xl) {
+        width: 110px;
+      }
+    }
+
+    #year {
+      width: 68px;
+
+      @media(min-width: $breakpoint-xl) {
+        width: 90px;
+      }
+    }
+  }
+
+  &__input {
+    position: relative;
+    height: 42px;
+    margin-top: 20px;
+
+    @media(min-width: $breakpoint-md) {
+      margin-top: 0;
+      width: 235px;
+    }
+
+    @media(min-width: $breakpoint-lg) {
+      margin-top: 20px;
+      width: 270px;
+    }
+
+    @media(min-width: $breakpoint-xl) {
+      margin-top: 40px;
+      width: 350px;
+    }
+
+    &.name {
+      opacity: 0;
+      animation: showUp 0.5s forwards;
+
+      @include appear;
+
+      input {
+        width: 100%;
+        position: absolute;
+        top: 20px;
+        border: none;
+        border-bottom: 1px solid  #F2F2F2;
+        
+        @media(min-width: $breakpoint-xl) {
+          top: 30px;
+        }
+      }
+    }
+
+    &.lastName {
+      opacity: 0;
+      animation: showUp 1s forwards;
+      animation-delay: 0.5s;
+
+      @include appear;
+
+      input {
+        width: 100%;
+        position: absolute;
+        top: 20px;
+        border: none;
+        border-bottom: 1px solid  #F2F2F2;
+
+        @media(min-width: $breakpoint-xl) {
+          top: 30px;
+        }
+      }
+    }
+
+    &.nationality {
+      opacity: 0;
+      animation: showUp 1s forwards;
+      animation-delay: 1s;
+
+      @include appear;
+
+      // label {
+      //   position: absolute;
+      //   left: 0;
+      // }
+
+      select {
+        display: block;
+        position: absolute;
+        top: 26px;
+        border: none;
+        border-bottom: 1px solid  #F2F2F2;
+        width: 235px;
+        appearance: none;
+        background: url(../../images/arrow.svg) no-repeat top right;
+        background-position-y: calc(100% - 11px);
+        font-size: 14px;
+        line-height: 16px;
+        color: #111111;
+        padding-bottom: 5px;
+
+        @media(min-width: $breakpoint-lg) {
+          width: 270px;
+        }
+
+        @media(min-width: $breakpoint-xl) {
+          top: 33px;
+          width: 350px;
+        }
+
+        &:focus {
+          outline: 0;
+        }
+      }
+    }
+
+    &.email {
+      width: 237px;
+      opacity: 0;
+      animation: showUp 1s forwards;
+      animation-delay: 1.5s;
+
+      @media(min-width: $breakpoint-lg) {
+        width: 270px;
+      }
+
+      @media(min-width: $breakpoint-xl) {
+        width: 350px;
+      }
+
+      @include appear;
+
+      label {
+        letter-spacing: 0.2px;
+      }
+
+      input {
+        width: 100%;
+        position: absolute;
+        top: 25px;
+        border: none;
+        border-bottom: 1px solid  #F2F2F2;
+
+        @media(min-width: $breakpoint-xl) {
+          top: 35px;
+        }
+      }
+    }
+
+    &.date {
+      position: relative;
+      opacity: 0;
+      animation: showUp 1s forwards;
+      animation-delay: 2.5s;
+
+      @include appear;
+
+      label {
+        position: absolute;
+        top: 5px;
+
+        @media(min-width: $breakpoint-xl) {
+          top: -5px;
+        }
+      }
+
+      select {
+        padding-bottom: 5px;
+        border: none;
+        border-bottom: 1px solid  #F2F2F2;
+        background: transparent;
+        font-family: 'WorkSans';
+        font-size: 14px;
+        line-height: 16px;             
+        color: #111111;
+        appearance: none;
+        background: url(../../images/arrow.svg) no-repeat right;
+        background-position-y: calc(100% - 11px);
+
+        &:focus {
+          outline: 0;
+        }
+      }
+    }
+
+    &.gender {
+      opacity: 0;
+      animation: showUp 1s forwards;
+      animation-delay: 3s;
+
+      @include appear;
+
+      @media(min-width: $breakpoint-lg) {
+        margin-top: 20px;
+      }
+
+      @media(min-width: $breakpoint-xl) {
+        margin-top: 40px;
+      }
+
+      input {
+        width: 12px;
+        height: 12px;
+        border: 0.7px solid #5A61ED;
+        border-radius: 6.3px;
+        margin-top: 10px;
+
+        @media(min-width: $breakpoint-md) {
+          margin-top: 0;
+        }
+      }
+
+      label {
+        position: absolute;
+        top: 5px;
+      }
+
+      p {
+        margin-left: 6px;
+        font-size: 14px;
+        margin-top: 10px;
+
+        @media(min-width: $breakpoint-md) {
+          margin-top: 0;
+        }
+
+        @media(min-width: $breakpoint-xl) {
+          font-size: 18px;
+        }
+      }
+    }
+
+    &.password {
+      opacity: 0;
+      animation: showUp 1s forwards;
+      animation-delay: 3.5s;
+
+      @include appear;
+
+      label {
+       position: absolute;
+       top: 10px;
+      }
+
+      input {
+        width: 100%;
+        position: absolute;
+        top: 28px;
+        border: none;
+        border-bottom: 1px solid  #F2F2F2;
+
+        @media(min-width: $breakpoint-xl) {
+          top: 38px;
+        }
+      }
+    }
+
+    &.confirm {
+      opacity: 0;
+      animation: showUp 1s forwards;
+      animation-delay: 4s;
+
+      @include appear;
+
+      label {
+        position: absolute;
+        top: 10px;
+      }
+
+      input {
+        width: 100%;
+        position: absolute;
+        top: 28px;
+        border: none;
+        border-bottom: 1px solid  #F2F2F2;
+
+        @media(min-width: $breakpoint-xl) {
+          top: 38px;
+        }
+      }
+    }
+
+    label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 14px;
+      font-size: 12px;
+      font-weight: 200;
+      line-height: 14px;
+      color: #7C7C7C;
+      letter-spacing: 0.3px;
+    }
+
+    input {
+      background: transparent;
+      font-size: 14px;
+      line-height: 16px;
+      letter-spacing: 0.4px;
+      color: #111111;
+      padding-bottom: 6.3px;
+      padding-left: 2px;
+
+      &:focus {
+      outline: 0;
+      }
+
+      &.error {
+        color: #FF2222;
+        border-bottom: 1px solid  #FF2828;
+      }
+    }
+  }
+
+  &__radios {
+    position: absolute;
+    top: 25px;
+    display: flex;
+    justify-content: flex-start;
+
+    @media(min-width: $breakpoint-xl) {
+      top: 35px;
+    }
+  }
+
+  &__radio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:nth-child(2) {
+      margin-left: 24px;
+    }
+  }
+
+  &__login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+
+    a {
+      text-decoration: underline;
+      color: #5A61ED;
+    }
+
+    @media(min-width: $breakpoint-md) {
+      position: absolute;
+      left: 20.8px;
+      bottom: 43.48px;
+      height: 15px;
+      font-size: 13px;
+      font-weight: 200;
+      line-height: 15px;
+      letter-spacing: 0.35px;
+      color: #000000;
+      display: block;
+      margin-top: 0;
+    }
+
+    @media(min-width: $breakpoint-xl) {
+      font-size: 20px;
+    }
+  }
+
+  &__submit {
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 154px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #5A61ED;
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #FFF;
+    z-index: 10;
+
+    &.shake{
+      animation: 1.2s ease-in-out 0s normal none infinite running trambling-animation;
+    }
+
+    @keyframes trambling-animation {
+      35% {transform:  translate(0, 0);}
+      40% {transform:  translate(-2px, 0);}
+      45% {transform:  translate(2px, 0);}
+      50% {transform:  translate(-2px, 0);}
+      55% {transform:  translate(2px, 0);}
+      60% {transform:  translate(-2px, 0);}
+      65% {transform:  translate(2px, 0);}
+      70% {transform:  translate(0, 0);}
+    }
+
+    @media(min-width: $breakpoint-md) {
+      position: absolute;
+      margin-top: 0;
+      right: 22px;
+      bottom: 32.48px;
+    }
+
+    @media(min-width: $breakpoint-xl) {
+      width: 200px;
+      height: 50px;
+      font-size: 20px;
+    }
+  }
+
+  &__check {
+    position: absolute;
+    right: 0;
+    bottom: 3px;
+    display: none;
+
+    @media(min-width: $breakpoint-lg) {
+      bottom: 0;
+    }
+
+    @media(min-width: $breakpoint-xl) {
+      bottom: -8px;
+    }
+  }
+
+  &__background {
+    display: none;
+
+    @media(min-width: $breakpoint-md) {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      display: block;
+    }
+  }
+}

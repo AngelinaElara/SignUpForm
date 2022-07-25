@@ -1,0 +1,40 @@
+.warning {
+  &__name, &__lastName {
+    position: absolute;
+    left: 0;
+    bottom: -12px;
+    font-size: 10px;
+    font-weight: 400;
+    color: #FF2222;
+
+    @media(min-width: $breakpoint-xl) {
+      bottom: -22px;
+    }
+  }
+
+  &__email {
+    position: absolute;
+    left: 0;
+    bottom: -14px;
+    font-size: 10px;
+    font-weight: 400;
+    color: #FF2222;
+
+    @media(min-width: $breakpoint-xl) {
+      bottom: -24px;
+    }
+  }
+
+  &__password, &__confimPassword {
+    position: absolute;
+    left: 0;
+    bottom: -22px;
+    font-size: 10px;
+    font-weight: 400;
+    color: #FF2222;
+
+    @media(min-width: $breakpoint-xl) {
+      bottom: -32px;
+    }
+  }
+}
